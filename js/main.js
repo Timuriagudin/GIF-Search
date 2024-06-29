@@ -1,11 +1,10 @@
-// Function to perform search
 function search() {
   const query = document.getElementById("js-searchInput").value.trim();
   const latinAlphabetRegex = /^[a-zA-Z]+$/;
   const messageContainer = document.getElementById("js-message");
   const resultsContainer = document.getElementById("js-results");
   messageContainer.innerHTML = "";
-  resultsContainer.innerHTML = ""; // Clear previous results
+  resultsContainer.innerHTML = ""; 
 
   if (query === "") {
     messageContainer.textContent = "Please enter a search query.";
@@ -59,14 +58,12 @@ function search() {
     });
 }
 
-// Event listener for Enter key press
 document.getElementById("js-searchInput").addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     search();
   }
 });
 
-// Function to initiate search on button click
 function performSearch() {
   search();
 }

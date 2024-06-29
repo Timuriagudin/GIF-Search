@@ -1,7 +1,7 @@
 body {
-    margin: 0; /* Remove default margin */
-    font-family: Arial, sans-serif; /* Optional: Set desired font */
-    background-color: #f0f0f0; /* Optional: Set background color */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; 
 }
 
 h1 {
@@ -16,13 +16,13 @@ h1 {
 
 
 .searchInput {
-  width: 300px; /* Set width of the input field */
-  padding: 10px; /* Add padding inside the input field */
-  font-size: 16px; /* Set font size */
-  border: 1px solid #ccc; /* Add border with color */
-  border-radius: 4px; /* Add rounded corners */
-  outline: none; /* Remove outline when focused */
-  transition: border-color 0.2s ease-in-out; /* Smooth transition for border color */
+  width: 300px; 
+  padding: 10px; 
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
   margin-right: 10px;
 }
 
