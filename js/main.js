@@ -12,5 +12,16 @@ function search() {
     messageContainer.textContent = "Please enter only Latin alphabet characters (A-Z).";
     return;
   }
+
+  const api_key = "BVaNPy4RWbbjNaxy8bzG88OckhnlUwBi";
+  const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${api_key}`;
+
+  fetch(apiUrl)
+  .then(response => response.json())
+  .then((data) => {
+    const gifs = data.data;
+    const resultsContainer = document.getElementById('js-results');
+    resultsContainer.innerHTML = "";
+    
+  })
 }
-  
