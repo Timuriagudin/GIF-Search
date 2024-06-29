@@ -22,6 +22,9 @@ function search() {
     const gifs = data.data;
     const resultsContainer = document.getElementById('js-results');
     resultsContainer.innerHTML = "";
-    
+    gifs.forEach((gif) => {
+        const gifUrl = gif.images.downsized.url;
+        const title = gif.title;
   })
+})
 }
