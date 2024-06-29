@@ -34,6 +34,14 @@ function search() {
 
         const gifContainer = document.createElement("div");
         gifContainer.classList.add("gif-container");
-  })
-})
+        gifContainer.appendChild(img);
+        gifContainer.appendChild(titleElem);
+
+        resultsContainer.appendChild(gifContainer);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
 }
+  
