@@ -25,6 +25,15 @@ function search() {
     gifs.forEach((gif) => {
         const gifUrl = gif.images.downsized.url;
         const title = gif.title;
+        const img = document.createElement("img");
+        img.src = gifUrl;
+        img.alt = title;
+
+        const titleElem = document.createElement("p");
+        titleElem.textContent = title;
+
+        const gifContainer = document.createElement("div");
+        gifContainer.classList.add("gif-container");
   })
 })
 }
