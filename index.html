@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style.scss">
-</head>
-<body>
-    <h1>Simple search</h1>
-    <input type="text" class="searchInput" id="js-searchInput" placeholder="Type here">
-    <button class="btn-search" onclick="search()">Search</button>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style.scss" />
+  </head>
+  <body>
+    <h1>GIF Search</h1>
+    <section class="btn-field">
+      <input
+        type="text"
+        class="searchInput"
+        id="js-searchInput"
+        placeholder="Type here"
+      />
+      <button class="btn-search" onclick="search()">Search</button>
+    </section>
     <div class="message" id="js-message"></div>
     <div class="results" id="js-results"></div>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

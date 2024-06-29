@@ -1,8 +1,11 @@
+// Function to perform search
 function search() {
   const query = document.getElementById("js-searchInput").value.trim();
   const latinAlphabetRegex = /^[a-zA-Z]+$/;
   const messageContainer = document.getElementById("js-message");
+  const resultsContainer = document.getElementById("js-results");
   messageContainer.innerHTML = "";
+  resultsContainer.innerHTML = ""; // Clear previous results
 
   if (query === "") {
     messageContainer.textContent = "Please enter a search query.";
@@ -18,11 +21,20 @@ function search() {
   const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${api_key}`;
 
   fetch(apiUrl)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
     .then((data) => {
       const gifs = data.data;
-      const resultsContainer = document.getElementById("js-results");
-      resultsContainer.innerHTML = "";
+
+      if (gifs.length === 0) {
+        messageContainer.textContent = "No results found.";
+        return;
+      }
+
       gifs.forEach((gif) => {
         const gifUrl = gif.images.downsized.url;
         const title = gif.title;
@@ -43,5 +55,18 @@ function search() {
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
+      messageContainer.textContent = "An error occurred. Please try again later.";
     });
+}
+
+// Event listener for Enter key press
+document.getElementById("js-searchInput").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    search();
+  }
+});
+
+// Function to initiate search on button click
+function performSearch() {
+  search();
 }
