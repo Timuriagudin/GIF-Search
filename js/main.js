@@ -1,4 +1,4 @@
-function search() {
+async function search() {
   const query = document.getElementById("js-searchInput").value.trim();
   const latinAlphabetRegex = /^[a-zA-Z]+$/;
   const messageContainer = document.getElementById("js-message");
@@ -19,21 +19,17 @@ function search() {
   const api_key = "BVaNPy4RWbbjNaxy8bzG88OckhnlUwBi";
   const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${api_key}`;
 
-  fetch(apiUrl)
-    .then((response) => {
+  try{
+    const response = await fetch(apiUrl)
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      return response.json();
-    })
-    .then((data) => {
-      const gifs = data.data;
-
-      if (gifs.length === 0) {
-        messageContainer.textContent = "No results found.";
-        return;
-      }
-
+    const data = await response.json();
+const gifs = data.data;
+if (gifs.length === 0){
+  messageContainer.textContent="No results found";
+  return;
+}
       gifs.forEach((gif) => {
         const gifUrl = gif.images.downsized.url;
         const title = gif.title;
@@ -51,11 +47,11 @@ function search() {
 
         resultsContainer.appendChild(gifContainer);
       });
-    })
-    .catch((error) => {
+  }
+  catch(error) {
       console.error("Error fetching data:", error);
       messageContainer.textContent = "An error occurred. Please try again later.";
-    });
+    };
 }
 
 document.getElementById("js-searchInput").addEventListener("keypress", function (event) {
