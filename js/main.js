@@ -3,8 +3,11 @@ async function search() {
   const latinAlphabetRegex = /^[a-zA-Z]+$/;
   const messageContainer = document.getElementById("js-message");
   const resultsContainer = document.getElementById("js-results");
+  const countContainer = document.getElementById("js-count");
+
   messageContainer.innerHTML = "";
-  resultsContainer.innerHTML = ""; 
+  resultsContainer.innerHTML = "";
+  countContainer.textContent = "";
 
   if (query === "") {
     messageContainer.textContent = "Please enter a search query.";
@@ -19,46 +22,51 @@ async function search() {
   const api_key = "BVaNPy4RWbbjNaxy8bzG88OckhnlUwBi";
   const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${api_key}`;
 
-  try{
-    const response = await fetch(apiUrl)
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
     const data = await response.json();
-const gifs = data.data;
-if (gifs.length === 0){
-  messageContainer.textContent="No results found";
-  return;
-}
-      gifs.forEach((gif) => {
-        const gifUrl = gif.images.downsized.url;
-        const title = gif.title;
-        const img = document.createElement("img");
-        img.src = gifUrl;
-        img.alt = title;
+    const gifs = data.data;
+    const totalCount = gifs.length;
 
-        const titleElem = document.createElement("p");
-        titleElem.textContent = title;
+    if (totalCount === 0) {
+      messageContainer.textContent = "No GIFs found.";
+      return;
+    }
+    countContainer.textContent = `Found ${totalCount} GIFs:`;
 
-        const gifContainer = document.createElement("div");
-        gifContainer.classList.add("gif-container");
-        gifContainer.appendChild(img);
-        gifContainer.appendChild(titleElem);
+    gifs.forEach((gif) => {
+      const gifUrl = gif.images.downsized.url;
+      const title = gif.title;
+      const img = document.createElement("img");
+      img.src = gifUrl;
+      img.alt = title;
 
-        resultsContainer.appendChild(gifContainer);
-      });
+      const titleElem = document.createElement("p");
+      titleElem.textContent = title;
+
+      const gifContainer = document.createElement("div");
+      gifContainer.classList.add("gif-container");
+      gifContainer.appendChild(img);
+      gifContainer.appendChild(titleElem);
+
+      resultsContainer.appendChild(gifContainer);
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    messageContainer.textContent = "An error occurred. Please try again later.";
   }
-  catch(error) {
-      console.error("Error fetching data:", error);
-      messageContainer.textContent = "An error occurred. Please try again later.";
-    };
 }
 
-document.getElementById("js-searchInput").addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    search();
-  }
-});
+document
+  .getElementById("js-searchInput")
+  .addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      search();
+    }
+  });
 
 function performSearch() {
   search();

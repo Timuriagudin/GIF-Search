@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/style.scss" />
-  </head>
-  <body>
-    <h1>GIF Search</h1>
-   <section class="btn-field">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giphy</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.scss" />
+</head>
+<body>
+  <nav class="nav-bar">
+    <a href="#" class="logo">GIPHY</a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="#">About</a>
+      </li>
+    </ul>
+  </nav>
+  <h1>GIF Search</h1>
+    <section class="btn-field">
       <input
         type="text"
         class="searchInput"
@@ -18,9 +32,10 @@
       />
       <button class="btn-search" onclick="search()">Search</button>
     </section>
+    <div class="count" id="js-count"></div>
     <div class="message" id="js-message"></div>
     <div class="results" id="js-results"></div>
 
     <script src="js/main.js"></script>
-  </body>
+</body>
 </html>
