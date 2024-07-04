@@ -89,7 +89,7 @@ body {
 h1 {
   text-align: center;
   margin-top: 50px;
-  background: linear-gradient(178deg, #3c9bff, #00141f 100px);
+  background: linear-gradient(177deg, #ffffff, #ff7800 100px);
   background-clip: text;
   color: transparent;
   font-size: 50px;
@@ -172,7 +172,7 @@ h1 {
   color: #cac5c5;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 720px) {
 
 body{
   background: linear-gradient(to right, #06022f, #850a33);
@@ -200,7 +200,7 @@ body{
   h1 {
     text-align: center;
     margin-top: 20px;
-    background: linear-gradient(166deg, #3c9bff, #00141f 100px);
+    background: linear-gradient(177deg, #ffffff, #ff7800 100px);
     background-clip: text;
     color: transparent;
   }
