@@ -78,7 +78,7 @@
   font-size: 30px;
   font-size: 48px;
   background: linear-gradient(to right, #ffcc00, #ff6666);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -90,7 +90,7 @@ h1 {
   text-align: center;
   margin-top: 50px;
   background: linear-gradient(178deg, #3c9bff, #00141f 100px);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   font-size: 50px;
 }
@@ -136,10 +136,12 @@ h1 {
 .message {
   margin-top: 20px;
   text-align: center;
+  color: white;
 }
 
 .count {
   text-align: center;
+  color: white;
 }
 
 .results {
@@ -199,7 +201,7 @@ body{
     text-align: center;
     margin-top: 20px;
     background: linear-gradient(166deg, #3c9bff, #00141f 100px);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
   }
 
