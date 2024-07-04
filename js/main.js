@@ -1,6 +1,6 @@
 async function search() {
   const query = document.getElementById("js-searchInput").value.trim();
-  const latinAlphabetRegex = /^[a-zA-Z0-9]+$/;
+  const latinAlphabetRegex = /^[a-zA-Z0-9\s]+$/;
   const messageContainer = document.getElementById("js-message");
   const resultsContainer = document.getElementById("js-results");
   const countContainer = document.getElementById("js-count");
