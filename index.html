@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giphy</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/style.scss" />
-</head>
-<body>
-  <nav class="nav-bar">
-    <a href="#" class="logo">GIPHY</a>
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a href="#">About</a>
-      </li>
-    </ul>
-  </nav>
-  <h1>GIF Search</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giphy</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <a href="#" class="logo">GIPHY</a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">Search</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Movie</a>
+            <a href="#" class="dropdown-item">Show</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <h1>GIF Search</h1>
     <section class="btn-field">
       <input
         type="text"
@@ -37,5 +47,5 @@
     <div class="results" id="js-results"></div>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
