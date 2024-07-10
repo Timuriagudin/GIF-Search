@@ -237,25 +237,25 @@ h1 {
   }
 
   .dropdown-menu {
-    position: static; /* Изменяем положение на статическое, чтобы меню не перекрывало другие элементы */
-    display: none; /* Меню по-умолчанию скрыто на мобильных устройствах */
+    position: static; 
+    display: none; 
     background-color: #333;
-    box-shadow: none; /* Убираем тень для мобильных устройств */
-    border-top: 1px solid #666; /* Добавляем верхнюю границу */
-    margin-top: 5px; /* Небольшое расстояние между кнопкой и меню */
+    box-shadow: none; 
+    border-top: 1px solid #666;
+    margin-top: 5px;
   }
 
   .dropdown:hover .dropdown-menu {
-    display: block; /* Показываем меню при наведении */
+    display: block; 
   }
 
   .dropdown-content {
-    position: relative; /* Изменяем позицию на относительную */
-    min-width: auto; /* Минимальная ширина адаптивная */
+    position: relative; 
+    min-width: auto; 
   }
 
   .dropdown-menu a {
-    padding: 10px 15px; /* Отступы адаптивные */
-    font-size: 16px; /* Размер шрифта адаптивный */
+    padding: 10px 15px; 
+    font-size: 16px; 
   }
 }
