@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -201,6 +202,25 @@ h1 {
     margin: 10px;
     text-align: center;
     box-sizing: border-box;
+  }
+  .dropdown-menu {
+    position: static;
+    display: none; 
+    background-color: #333;
+    box-shadow: none; 
+    border-top: 1px solid #666; 
+    margin-top: 5px; 
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-content {
+    position: relative; 
+    min-width: auto; 
+  }
+  .dropdown-menu a {
+    padding: 10px 15px; 
+    font-size: 16px; 
   }
 }
 
