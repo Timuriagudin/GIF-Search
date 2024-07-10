@@ -1,0 +1,3 @@
+- As a user, I want to be able to enter a search query in the input field.
+- As a user, I want to receive clear feedback when I enter an invalid search term.
+- As a user, I want to be informed if there is an issue with fetching GIFs from the API.
