@@ -97,6 +97,9 @@ $mobile-background: linear-gradient(to right, #06022f, #850a33);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: $main-font;
   margin: 0;
   background: $mobile-background;
@@ -149,7 +152,8 @@ h1 {
   }
 }
 
-.message, .count {
+.message,
+.count {
   margin-top: 20px;
   text-align: center;
   color: $font-color;
@@ -160,6 +164,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
+  flex: 1;
 }
 
 .gif-container {
@@ -182,9 +187,28 @@ h1 {
     color: #cac5c5;
   }
 }
+.footer {
+  margin-top: auto;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-top: 0.1px solid white;
+}
+
+.footer h2 {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-size: 15px;
+}
 
 @media (max-width: 720px) {
   body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: $mobile-background;
   }
 
@@ -237,25 +261,40 @@ h1 {
   }
 
   .dropdown-menu {
-    position: static; 
-    display: none; 
+    position: static;
+    display: none;
     background-color: #333;
-    box-shadow: none; 
+    box-shadow: none;
     border-top: 1px solid #666;
     margin-top: 5px;
   }
 
   .dropdown:hover .dropdown-menu {
-    display: block; 
+    display: block;
   }
 
   .dropdown-content {
-    position: relative; 
-    min-width: auto; 
+    position: relative;
+    min-width: auto;
   }
 
   .dropdown-menu a {
-    padding: 10px 15px; 
-    font-size: 16px; 
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  .footer {
+    margin-top: auto;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-top: 0.1px solid white;
+  }
+
+  .footer h2 {
+    font-size: 15px;
+  }
+  .results{
+    flex: 1;
   }
 }
